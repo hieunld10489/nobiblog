@@ -50,8 +50,10 @@ VALUES
 ,('イベント','','Event','Sự kiện','','1','1',2)
 ,('演算子','えんさんし','Operator','Phép tính (+、-、÷、×)','','1','1',1)
 ,('アーキテクチャー','','Architecture','Cấu trúc','','1','1',2)
+,('プログラミング','','Programming','Lập Trình','','1','1',2)
 
 -- type:2 -> Data
+,('データベース','','Database','Cơ sở dữ liệu','','1','1',2)
 ,('エスキューエル','','SQL','SQL','','1','1',2)
 ,('表','おもて','Table','Bảng','','1','2',1)
 ,('テーブル','','Table','Bảng','','1','2',1)
@@ -105,6 +107,9 @@ VALUES
 ,('アクター','','Actor','Người làm','','1','3',2)
 ,('アサイン','','Assign','Phép gán','','1','3',2)
 ,('アドレス','','Address','Địa chỉ','','1','3',2)
+,('レイアウト','','Layout','Bố cục','vd: sách, website','1','3',2)
+,('テンプレート','','Template','Bản mẫu','','1','3',2)
+,('インターフェース','','Interface','Giao diện','','1','3',2)
 
 -- type:4 -> Nút xử lý
 ,('戻る','もどる','Return','Trở về','','1','4',1)
@@ -140,14 +145,15 @@ VALUES
 ,('埋め込む','うめこむ','Embed','Nhúng','','1','4',1)
 ,('もっと見る','','','Tìm hiểu thêm','','1','4',1)
 ,('破棄','はき','Discard','Hủy bỏ, hủy','','1','4',1)
+,('アンドゥ','','Undo','Lui lại, lùi về','','1','4',2)
 
 -- type:5 -> Thiết bị & Phần cứng
 ,('ハードウェア','','Hardware','Phần cứng','','1','5',2)
 ,('システム','','System','Hệ thống','','1','5',2)
 ,('機械','きかい','Hardware','Máy móc','','1','5',1)
 ,('オーエス','','OS（Operating System）','Hệ điều hành','','1','5',2)
-,('アンドロイド','','Android','Hệ điều hành Android','','1','5',2)
-,('アイオーエス','','IOS','Hệ điều hành IOS','','1','5',2)
+,('アンド・ロイド','','Android','Hệ điều hành Android','','1','5',2)
+,('アイ・オーエス','','IOS','Hệ điều hành IOS','','1','5',2)
 ,('ウィンドウズ','','Windows','Hệ điều hành Windows','','1','5',2)
 ,('マックオーエス','','MacOS','Hệ điều hành MacOS','','1','5',2)
 ,('リナックス','','Linux','Hệ điều hành Linux','','1','5',2)
@@ -172,10 +178,10 @@ VALUES
 ,('ステップ','','Step','Bước','','1','6',2)
 
 -- type:10 -> Application
-,('エクセル','','Excel','Bảng tính excel','','1','13',2)
+,('エクセル','','Excel','Bảng tính excel','','1','10',2)
+,('インターネット・エクスプローラー','','Internet explorer','Trình duyệt IE','','1','10',2)
 
 -- type:11 -> Xoạn thảo
-,('アンドゥ','','Undo','Lui lại, lùi về','','1','1',2)
 
 -- type:12 -> Tên riêng
 ,('ビーツーシー版','ビーツーシーばん','B2C','Business to Customer','','1','12',3)
@@ -252,16 +258,15 @@ VALUES
 ,('イメージ','','Image','Sự phản ảnh, tạo ảnh','','1','13',2)
 ,('インストール','','Install','Tiết lập, lắp ráp','','1','13',2)
 ,('インターネット','','Internet','Liên mạng','','1','13',2)
-,('インターネット・エクスプローラー','','Internet explorer','Trình duyệt IE','','1','13',2)
-,('インターフェース','','Interface','Mạch ghép nối, sự phân nối, thiết bị ghép nối','','1','13',2)
 ,('イントラネット','','Intranet','Mạng cục bộ, mạng nội bộ','','1','13',2)
 ,('インフラ','','Infrastructure','Cấu trúc hạ tầng','','1','13',2)
 ,('インプリメンテーション','','Implementation','Thực hiện, cài đặt','','1','13',2)
-,('エラー','','Error','Độ sai, sai số','','1','13',2)
+,('エラー','','Error','Lỗi','','1','13',2)
 ,('エンドユーザ','','End user','Người dung cuối','','1','13',2)
 ,('オブジェクト','','Object','Biến đối tượng','','1','13',2)
-,('オプション','','Option','Sự lựa chọn, luật lựa chọn','','1','13',2)
+,('オプション','','Option','Sự lựa chọn','','1','13',2)
 ,('オペレータ','','Operator','Điều hành','','1','13',2)
+,('キャラクター','','Character','nhân vật','','1','13',2)
 
 ;
 UPDATE vocabulary set created = now(), modified = now() where created is null;

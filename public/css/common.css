@@ -35,7 +35,8 @@
 }
 
 body {
-    font-family: Verdana, Meiryo, sans-serif;
+    /*font-family: Verdana, Meiryo, sans-serif;*/
+    font-family: helvetica neue,Helvetica,Arial,sans-serif;
 }
 
 #header-search {
