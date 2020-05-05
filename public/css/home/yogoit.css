@@ -1,0 +1,18 @@
+.image-parent {
+    max-width: 40px;
+}
+
+.category-it {
+    padding: 0.4rem;
+}
+.category-it:nth-child(-n+3)  {
+    padding-top: 0;
+}
+
+.card-body {
+    padding: 0.4rem;
+}
+
+.bd-placeholder-img {
+    padding-bottom: 0.2rem;
+}

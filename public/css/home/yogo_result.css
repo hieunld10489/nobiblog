@@ -1,0 +1,21 @@
+td {
+    position: relative;
+}
+
+:-moz-any-link > html, tr {
+    display: flex;
+    flex-direction: row;
+}
+
+:-moz-any-link > html, td {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sound {
+    position:absolute;
+    right:2px;
+    top:2px;
+    min-width: 2.2rem;
+}

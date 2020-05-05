@@ -18,4 +18,13 @@ if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
     return false;
 }
 
+function pr($var)
+{
+
+    $template = (PHP_SAPI !== 'cli' && PHP_SAPI !== 'phpdbg') ? '<pre class="pr">%s</pre>' : "\n%s\n\n";
+    printf($template, trim(print_r($var, true)));
+
+    return $var;
+}
+
 require_once __DIR__.'/public/index.php';

@@ -1,6 +1,45 @@
 $(function () {
+    var duration = 300;
+    var pageHeight = $(document).height();
 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.to-top').fadeIn(duration);
+        } else {
+            $('.to-top').fadeOut(duration);
+        }
+
+        if($(this).scrollTop() < pageHeight - 880) {
+            $('.to-bottom').fadeIn(duration);
+        } else {
+            $('.to-bottom').fadeOut(duration);
+        }
+    });
+
+    $('.to-top').click(function(event) {
+        event.preventDefault();
+        $('html').animate({scrollTop: 0}, duration);
+        return false;
+    });
+
+    $('.to-bottom').click(function(event) {
+        event.preventDefault();
+        $('html').animate({scrollTop: pageHeight}, duration);
+        return false;
+    });
+
+    setTimeout(function() {
+        postJSON(getDomain('home/load-page'), {options:{process:false}}, function (res) {
+            pr(res);
+            if(res.status) {
+
+            } else {
+
+            }
+        });
+    }, 2000);
 });
+
 
 function logout(url) {
     popupConfirm('ログアウトします。宜しいですか？', function() {
@@ -187,21 +226,55 @@ function popupError (content, callBackFunc, btnText) {
     });
 }
 
-function getJSON(requestPath, params, callBackFunc, obj) {
-    $.getJSON(requestPath, params, function (data, textStatus, jqXHR) {
-        if (textStatus === 'success') {
-            if (callBackFunc) {
-                callBackFunc(data, obj);
+function getJSON(requestPath, callBackFunc, obj) {
+    showLoader();
+    $.ajax({
+        type: 'GET',
+        headers: {'X-CSRF-Token': $('#_token').val() },
+        contentType: 'application/JSON',
+        dataType : 'JSON',
+        scriptCharset: 'utf-8',
+        url: requestPath,
+        cache: false,
+        processData: false,
+        success: function (data, textStatus, jqXHR) {
+            if (textStatus === 'success') {
+                if (callBackFunc) {
+                    callBackFunc(data, obj);
+                }
+            } else {
+                pr(data);
             }
-        } else {
-            pr(data);
+        },
+        error: function() {
+            pr('error');
+            showLoader(false);
+        },
+        complete: function() {
+            //pr('complete');
+            showLoader(false);
         }
-    }).fail(function (jqXHR, textStatus, error) {
-        pr(error);
+    }).fail(function (xhr, status, error) {
+        //popupError('Kết internet không ổn định.');
+        popupError(status +' ; '+ error);
     });
 }
 
 function postJSON(requestPath, params, callBackFunc, obj) {
+
+    let isProcess = true;
+
+    if (params.hasOwnProperty('options')) {
+        let objOption = params.options;
+
+        if(objOption.hasOwnProperty('process')) {
+            isProcess = objOption.process;
+        }
+
+        delete params.options;
+    }
+
+    showLoader(isProcess);
     $.ajax({
         type: 'POST',
         headers: {'X-CSRF-Token': $('#_token').val() },
@@ -223,12 +296,15 @@ function postJSON(requestPath, params, callBackFunc, obj) {
         },
         error: function() {
             pr('error');
+            showLoader(false);
         },
         complete: function() {
-            pr('complete');
+            //pr('complete');
+            showLoader(false);
         }
-    }).fail(function () {
-        popupError('request fail');
+    }).fail(function (xhr, status, error) {
+        //popupError('Kết internet không ổn định.');
+        popupError(status +' ; '+ error);
     });
 }
 
