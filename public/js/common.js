@@ -160,7 +160,7 @@ function popupConfirm(content, callBackFunc, callBackFuncClose, title, options) 
         draggable: false,
         buttons: {
             ok: {
-                btnClass: 'btn-primary',
+                btnClass: 'btn-primary btn-sm',
                 text: okText,
                 action: function(){
                     if (callBackFunc) {

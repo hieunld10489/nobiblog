@@ -45,7 +45,7 @@ function removeAllWord() {
         return false;
     }
 
-    popupConfirm('Bạn có chắc chắn sẽ xoá hết từ yêu thích không', function() {
+    popupConfirm('Bạn có chắc chắn sẽ xoá hết từ yêu thích không ?', function() {
         $.cookie(getKey(), '', { path: '/' });
 
             // remove row

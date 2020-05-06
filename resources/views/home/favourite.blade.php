@@ -22,9 +22,18 @@
 @section('content')
     <div class="card mar-bot-5rem">
         <div class="rm-pad card-body">
-            <button class="remove-all-favourite btn btn-sm btn-danger">Xoá tất cả yêu thích</button>
             <table id="ls-content" class="table table-striped table-bordered">
                 <thead>
+                    <tr>
+                        <td class="text-center">
+                            <button class="remove-all-favourite btn btn-sm btn-danger">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;
+                                Xoá tất cả yêu thích
+                            </button>
+                        </td>
+                        <td></td>
+
+                    </tr>
                     <tr>
                         <th width="52%" class="text-center" title="Từ Vựng・Cách đọc">Từ Vựng</th>
                         <th width="48%" class="text-center" align="center">EN/VN</th>
