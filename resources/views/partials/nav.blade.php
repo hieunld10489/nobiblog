@@ -9,7 +9,12 @@
                 @if($routeAs === $aryRouteItem['url'])
                     @php $strClass = 'active ' @endphp
                 @endif
-                <li><a href="{{ $strUrl }}" class="{{ $strClass }} font-weight-bold h5">{{ $aryRouteItem['text'] }}</a></li>
+                <li>
+                    <a href="{{ $strUrl }}" class="{{ $strClass }} font-weight-bold h5">
+                        <i class="fa {{ $aryRouteItem['icon'] }}" aria-hidden="true"></i>&nbsp;&nbsp;
+                        {{ $aryRouteItem['text'] }}
+                    </a>
+                </li>
             @endforeach
         </ul>
     </nav>

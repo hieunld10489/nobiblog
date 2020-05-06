@@ -5,7 +5,7 @@ return [
         [
             'url' => 'home/yogoit',
             'text' => 'Thuật ngữ IT',
-            'icon' => 'fa-map-signs'
+            'icon' => 'fa-twitch'
         ],
         [
             'url' => 'home/favourite',
@@ -40,5 +40,5 @@ return [
         2 => 'Chữ Kana',
         3 => 'Khác'
     ],
-    'CACHE_ID' => '20200505_1'
+    'CACHE_ID' => '20200506_3'
 ];

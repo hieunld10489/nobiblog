@@ -32,8 +32,8 @@ function removeWord(me) {
         $.cookie(getKey(), aryLsWordId.join('|'), { path: '/' });
 
         // remove row
-        $( "span[data-word-id='"+intWordId+"']" ).parent().parent().next().remove();
-        $( "span[data-word-id='"+intWordId+"']" ).parent().parent().remove();
+        $( "span[data-word-id='"+intWordId+"']" ).parent().parent().parent().next().remove();
+        $( "span[data-word-id='"+intWordId+"']" ).parent().parent().parent().remove();
     }
 }
 

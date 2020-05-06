@@ -21,13 +21,32 @@ td {
 
 .add-favourite, .remove-favourite {
     position:absolute;
-    left:0;
-    top:0;
+    left: .5rem;
+    top: 0;
     font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.add-favourite:hover, .remove-favourite:hover {
+    background-color: transparent;
+}
+
+.add-favourite:active, .remove-favourite:active {
+    background-color: transparent !important;
+}
+
+.add-favourite:hover {
+    color: black;
+}
+
+.remove-favourite:hover {
+    color: rgba(255, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 480px) {
     .add-favourite, .remove-favourite {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        left: .08rem;
+        top: -0.24rem;
     }
 }

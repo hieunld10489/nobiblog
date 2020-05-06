@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('link')
-    <link rel="stylesheet" href="{{ asset('css/home/yogo_result.css?v=2') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/home/yogo_result.css') }}"/>
 @endsection
 
 @section('bread_crumb')
@@ -21,19 +21,20 @@
 
 @section('content')
     <div class="card mar-bot-5rem">
-        <div class="rm-pad card-body">
+        <div class="card-header cur-pointer" data-toggle="collapse"
+             data-target="#ls-word"
+             aria-expanded="true"
+             aria-controls="ls-word">
+            <i class="fa fa-get-pocket" aria-hidden="true"></i>&nbsp;&nbsp;Từ vựng
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="remove-all-favourite btn btn-sm btn-danger">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;
+                Xoá tất cả yêu thích
+            </button>
+        </div>
+        <div id="ls-word" class="rm-pad card-body collapse show">
             <table id="ls-content" class="table table-striped table-bordered">
                 <thead>
-                    <tr>
-                        <td class="text-center">
-                            <button class="remove-all-favourite btn btn-sm btn-danger">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;
-                                Xoá tất cả yêu thích
-                            </button>
-                        </td>
-                        <td></td>
-
-                    </tr>
                     <tr>
                         <th width="52%" class="text-center" title="Từ Vựng・Cách đọc">Từ Vựng</th>
                         <th width="48%" class="text-center" align="center">EN/VN</th>
@@ -50,9 +51,11 @@
 
                     <tr>
                         <td class="text-wrap" rowspan="2">
-                            <span class="btn-outline-warning remove-favourite" data-word-id="{{ $intVocabularyItemId }}" title="Xoá khỏi yêu thích">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </span>
+                            <div id="favourite-btn-{{ $intVocabularyItemId }}">
+                                <span class="btn-outline-warning remove-favourite" data-word-id="{{ $intVocabularyItemId }}" title="Xoá khỏi yêu thích">
+                                    <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                </span>
+                            </div>
 
                             @if($aryVocabularyItem['voice_path'])
                                 <button class="btn btn-sm btn-info sound">

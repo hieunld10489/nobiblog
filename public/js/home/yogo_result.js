@@ -75,13 +75,13 @@ function addButton(id, type) {
     if(type === 'add') {
         strHtml =
         '<span class="btn-outline-secondary add-favourite" data-word-id="'+id+'">'+
-            '<i class="fa fa-star" aria-hidden="true"></i>'+
+            '<i class="fa fa-plus-circle" aria-hidden="true"></i>'+
         '</span>';
     }
     if(type === 'remove') {
         strHtml =
         '<span class="btn-outline-warning remove-favourite" data-word-id="'+id+'">'+
-            '<i class="fa fa-star" aria-hidden="true"></i>'+
+            '<i class="fa fa-minus-circle" aria-hidden="true"></i>'+
         '</span>';
     }
     return strHtml;
