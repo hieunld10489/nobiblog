@@ -25,12 +25,17 @@
              data-target="#ls-word"
              aria-expanded="true"
              aria-controls="ls-word">
-            <i class="fa fa-get-pocket" aria-hidden="true"></i>&nbsp;&nbsp;Từ vựng
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="remove-all-favourite btn btn-sm btn-danger">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;
-                Xoá tất cả yêu thích
-            </button>
+            <div class="clearfix">
+                <div class="float-left">
+                    <i class="fa fa-get-pocket" aria-hidden="true"></i>&nbsp;&nbsp;Từ vựng
+                </div>
+                <div class="float-right">
+                    <button class="remove-all-favourite btn btn-sm btn-danger">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;
+                        Xoá tất cả yêu thích
+                    </button>
+                </div>
+            </div>
         </div>
         <div id="ls-word" class="rm-pad card-body collapse show">
             <table id="ls-content" class="table table-striped table-bordered">
@@ -50,7 +55,7 @@
                     @php ($arySynonym               = Arr::pull($aryVocabularyItem, 'vocabulary_synonyms', []))
 
                     <tr>
-                        <td class="text-wrap" rowspan="2">
+                        <td class="vertical-mid" rowspan="2">
                             <div id="favourite-btn-{{ $intVocabularyItemId }}">
                                 <span class="btn-outline-warning remove-favourite" data-word-id="{{ $intVocabularyItemId }}" title="Xoá khỏi yêu thích">
                                     <i class="fa fa-minus-circle" aria-hidden="true"></i>
@@ -63,7 +68,7 @@
                                 </button>
                             @endif
 
-                            <div class="word text-center text-dark">{{ $strWord }}</div>
+                            <div class="word text-center">{{ $strWord }}</div>
                             @if($intVocabularyItemReading)
                                 <div class="reading text-light bg-info">{{ $intVocabularyItemReading }}</div>
                             @endif

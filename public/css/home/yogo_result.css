@@ -22,7 +22,7 @@ td {
 .add-favourite, .remove-favourite {
     position:absolute;
     left: .5rem;
-    top: 0;
+    top: .2rem;
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -47,6 +47,6 @@ td {
     .add-favourite, .remove-favourite {
         font-size: 1.2rem;
         left: .08rem;
-        top: -0.24rem;
+        top: 0rem;
     }
 }

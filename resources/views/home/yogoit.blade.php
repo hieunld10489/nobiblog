@@ -22,7 +22,7 @@
              data-target="#category-type"
              aria-expanded="true"
              aria-controls="category-type">
-            <i class="fa fa-get-pocket" aria-hidden="true"></i>&nbsp;&nbsp;Chủ đề !
+            <i class="fa fa-get-pocket" aria-hidden="true"></i>&nbsp;&nbsp;Chủ đề
         </div>
         <div id="category-type" class="card-body collapse show">
             <p>

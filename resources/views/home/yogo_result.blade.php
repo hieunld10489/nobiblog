@@ -45,7 +45,7 @@
                     @php ($arySynonym               = Arr::pull($aryVocabularyItem, 'vocabulary_synonyms', []))
 
                     <tr>
-                        <td class="text-wrap" rowspan="2">
+                        <td class="vertical-mid" rowspan="2">
                             <div id="favourite-btn-{{ $intVocabularyItemId }}">
                                 @if(in_array($intVocabularyItemId, $aryFavouriteId))
                                     <span class="btn-outline-warning remove-favourite" data-word-id="{{ $intVocabularyItemId }}" title="Xoá khỏi yêu thích">
@@ -64,7 +64,7 @@
                                 </button>
                             @endif
 
-                            <div class="word text-center text-dark">{{ $strWord }}</div>
+                            <div class="word text-center">{{ $strWord }}</div>
                             @if($intVocabularyItemReading)
                                 <div class="reading text-light bg-info">{{ $intVocabularyItemReading }}</div>
                             @endif
