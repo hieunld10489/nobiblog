@@ -37,7 +37,7 @@
                 @endif
 
                 <a href="{{ $strUrl }}" class="text-white nav-link">
-                    &nbsp;&nbsp;<i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;&nbsp;
+                    &nbsp;&nbsp;<i class="fa {{ $aryRouteItem['icon'] }}" aria-hidden="true"></i>&nbsp;&nbsp;
                     {{ $aryRouteItem['text'] }}
                 </a>
             @endforeach

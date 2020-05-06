@@ -3,10 +3,6 @@ footer, header {
 }
 
 body {
-	line-height: 1;
-}
-
-body {
 	-webkit-text-size-adjust: none;
 	-ms-overflow-style: scrollbar;
 }

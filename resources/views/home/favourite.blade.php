@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('link')
-    <link rel="stylesheet" href="{{ asset('css/home/yogo_result.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/home/yogo_result.css?v=2') }}"/>
 @endsection
 
 @section('bread_crumb')
@@ -12,7 +12,7 @@
                 'text' => 'Thuật ngử IT'
             ], [
                 'class' => 'active',
-                'text' => 'Kết quả thuật ngử IT',
+                'text' => 'Từ yêu thích',
                 'span' => '('.count($aryVocabulary)."/$intCntVocabulary từ)"
             ]
         ]
@@ -22,12 +22,13 @@
 @section('content')
     <div class="card mar-bot-5rem">
         <div class="rm-pad card-body">
+            <button class="remove-all-favourite btn btn-sm btn-danger">Xoá tất cả yêu thích</button>
             <table id="ls-content" class="table table-striped table-bordered">
                 <thead>
-                <tr>
-                    <th width="52%" class="text-center" title="Từ Vựng・Cách đọc">Từ Vựng</th>
-                    <th width="48%" class="text-center">EN/VN</th>
-                </tr>
+                    <tr>
+                        <th width="52%" class="text-center" title="Từ Vựng・Cách đọc">Từ Vựng</th>
+                        <th width="48%" class="text-center" align="center">EN/VN</th>
+                    </tr>
                 </thead>
                 <tbody>
                 @forelse ($aryVocabulary as $aryVocabularyItem)
@@ -40,17 +41,9 @@
 
                     <tr>
                         <td class="text-wrap" rowspan="2">
-                            <div id="favourite-btn-{{ $intVocabularyItemId }}">
-                                @if(in_array($intVocabularyItemId, $aryFavouriteId))
-                                    <span class="btn-outline-warning remove-favourite" data-word-id="{{ $intVocabularyItemId }}" title="Xoá khỏi yêu thích">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </span>
-                                @else
-                                    <span class="btn-outline-secondary add-favourite" data-word-id="{{ $intVocabularyItemId }}" title="Thêm vào yêu thích">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </span>
-                                @endif
-                            </div>
+                            <span class="btn-outline-warning remove-favourite" data-word-id="{{ $intVocabularyItemId }}" title="Xoá khỏi yêu thích">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
 
                             @if($aryVocabularyItem['voice_path'])
                                 <button class="btn btn-sm btn-info sound">
@@ -103,5 +96,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/home/yogo_result.js') }}"></script>
+    <script src="{{ asset('js/home/favourite.js') }}"></script>
 @endsection

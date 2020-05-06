@@ -5,10 +5,11 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
-        <!-- Links -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+        <!-- Fonts -->
+{{--        <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet" />--}}
 
+        <!-- Links -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/jquery-confirm.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('stellar/assets/css/main.css') }}"/>
@@ -28,7 +29,6 @@
 
             <!-- Header -->
             <header id="header" class="alt text-light">
-                {{--<span class="logo"><img src="{{ asset('stellar/images/logo.svg') }}" alt="logo" /></span>--}}
                 <h1>NobiBlog</h1>
                 <p class="text-hide"><small>IT、スポーツ等に関する用語集を掲載しています。</small></p>
             </header>
@@ -78,6 +78,7 @@
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('js/jquery-confirm.js') }}"></script>
+        <script src="{{ asset('js/jquery.cookie.js') }}"></script>
         <script src="{{ asset('stellar/assets/js/jquery.scrollex.min.js') }}"></script>
         <script src="{{ asset('stellar/assets/js/jquery.scrolly.min.js') }}"></script>
         <script src="{{ asset('stellar/assets/js/browser.min.js') }}"></script>
@@ -88,8 +89,18 @@
             function getDomain(url) {
                 return '{{ url('') }}/' + url;
             }
+
+            function getKey() {
+                return 'word-id';
+            }
+
+            function readWord() {
+                return $.cookie(getKey());
+            }
         </script>
+
         <script src="{{ asset('js/common.js') }}"></script>
+        <script src="{{ asset('js/partials/word_search.js') }}"></script>
 
         @hasSection('script')
             @yield('script')

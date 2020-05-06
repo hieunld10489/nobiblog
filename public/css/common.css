@@ -35,7 +35,6 @@
 }
 
 body {
-    /*font-family: Verdana, Meiryo, sans-serif;*/
     font-family: helvetica neue,Helvetica,Arial,sans-serif;
 }
 
@@ -95,8 +94,7 @@ body {
 
 .reading {
     padding: .4rem;
-    margin-top: .2rem;
-    margin-bottom: .2rem;
+    margin: .4rem .2rem 0 .2rem;
     border-radius: .5rem;
     font-size: 90%;
     text-align: center;
@@ -112,6 +110,7 @@ body {
     display: none;
     border-radius: 20%;
     opacity: 0.6;
+    z-index: 9;
 }
 
 .to-top {
@@ -224,7 +223,18 @@ body {
 
     #ls-content td {
         font-size: .9rem;
-        padding: .3rem;
+        padding: .3rem .3rem .1rem .3rem;
+    }
+
+    .reading {
+        margin-top: .2rem;
+        margin-left: 1rem;
+        padding: .3rem 0;
+    }
+
+    .word {
+        font-size: 1.1em;
+        padding-left: .8rem;
     }
 }
 

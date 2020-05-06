@@ -143,11 +143,11 @@ function ajax(options, loader, endLoader) {
 
 function popupConfirm(content, callBackFunc, callBackFuncClose, title, options) {
     if(typeof(title) == "undefined") {
-        title = '確認';
+        title = 'Xác nhận';
     }
 
-    var okText = options && options.okText? options.okText : '確定';
-    var closeText = options && options.closeText? options.closeText : 'キャンセル';
+    var okText = options && options.okText? options.okText : 'Xác nhận';
+    var closeText = options && options.closeText? options.closeText : 'Hủy';
 
     $.confirm({
         title: title,

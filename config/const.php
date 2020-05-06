@@ -4,8 +4,14 @@ return [
     'LS_MENU' => [
         [
             'url' => 'home/yogoit',
-            'text' => 'Thuật ngữ IT'
-        ]
+            'text' => 'Thuật ngữ IT',
+            'icon' => 'fa-map-signs'
+        ],
+        [
+            'url' => 'home/favourite',
+            'text' => 'Từ yêu thích',
+            'icon' => 'fa-star'
+        ],
         /*, [
 
             'url' => 'home/corona',
@@ -33,5 +39,6 @@ return [
         1 => 'Hán tự',
         2 => 'Chữ Kana',
         3 => 'Khác'
-    ]
+    ],
+    'CACHE_ID' => '20200505_1'
 ];

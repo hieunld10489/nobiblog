@@ -99,7 +99,3 @@
         </div>
     </div>
 </div>
-
-@section('script')
-    <script src="{{ asset('js/partials/word_search.js') }}"></script>
-@endsection

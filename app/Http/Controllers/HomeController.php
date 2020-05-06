@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AccessLog;
 use App\Vocabulary;
+use Cookie;
 use Illuminate\Http\Request;
 use App\VocabularyType;
 use DB;
@@ -38,6 +39,7 @@ class HomeController extends BaseController
         $strSearch = $request->input('search');
         $intWordType = $request->input('word_type');
         $aryCondition = [];
+        $aryFavouriteId = $this->getFavourite();
 
         if($strSearch) {
             $aryCondition['OR LIKE'] = [
@@ -70,6 +72,22 @@ class HomeController extends BaseController
             'intTypeId' => $intTypeId,
             'intWordType' => $intWordType,
             'strSearch' => $strSearch,
+            'aryFavouriteId' => $aryFavouriteId
+        ]);
+    }
+
+    public function favourite(Request $request)
+    {
+        $aryVocabulary = [];
+        $aryFavouriteId = $this->getFavourite();
+
+        if($aryFavouriteId) {
+            $aryCondition['IN'] = ['id' => $aryFavouriteId];
+            $aryVocabulary = $this->yogo($aryCondition);
+        }
+
+        return view('home.favourite', [
+            'aryVocabulary' => $aryVocabulary
         ]);
     }
 
@@ -123,4 +141,12 @@ class HomeController extends BaseController
         return view('home.corona');
     }
 
+    protected function getFavourite() {
+        $aryFavouriteId = [];
+        if(isset($_COOKIE['word-id'])) {
+            $aryFavouriteId = explode('|', $_COOKIE['word-id']);
+        }
+
+        return $aryFavouriteId;
+    }
 }

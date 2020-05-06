@@ -44,6 +44,8 @@ function resetParam() {
 }
 
 function search(objCondition) {
+    showLoader();
+
     let searchUrl = getDomain('home/yogo-result/');
     let aryCondition = [];
     let strType = objCondition.strType,

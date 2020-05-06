@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\AppUrlGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->environment() !== 'production') {
             $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
+        $url = $this->app['url'];
+        $this->app->singleton('url', function () use ($url) {
+            return new AppUrlGenerator($url);
+        });
     }
 
     /**

@@ -100,6 +100,8 @@ class BaseController extends Controller
                         $objVocabulary->where($strFieldKey, $strConditionKey, $fieldItem);
                     } else if($strConditionKey === 'NOT NULL') {
                         $objVocabulary->whereNotNull($fieldItem);
+                    } else if($strConditionKey === 'IN') {
+                        $objVocabulary->wherein($strFieldKey, $fieldItem);
                     }
                 }
             }

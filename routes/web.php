@@ -12,6 +12,7 @@ Route::group(['prefix' => 'home/'], function () {
     Route::get('/', ['as' => 'home/index', 'uses' => 'HomeController@index']);
     Route::get('/corona', ['as' => 'home/corona', 'uses' => 'HomeController@corona']);
     Route::get('/yogoit', ['as' => 'home/yogoit', 'uses' => 'HomeController@yogoit']);
+    Route::get('/favourite', ['as' => 'home/favourite', 'uses' => 'HomeController@favourite']);
     Route::get('/yogo-result/{typeid?}', [
         'as' => 'home/yogo-result',
         'uses' => 'HomeController@yogoResult'
